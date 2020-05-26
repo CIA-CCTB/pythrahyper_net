@@ -1,0 +1,7 @@
+The directories of the images to construct the multilayered conmputation field
+image,Structured_Images/empty.tif
+imaged,Structured_Images/empty.tif
+imaget,Structured_Images/sphereshell.tif
+image_name,volume.tif
+dirft_image_name,drift.tif
+strucure_image_name,structure.tif

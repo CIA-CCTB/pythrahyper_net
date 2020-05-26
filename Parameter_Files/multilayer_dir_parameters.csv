@@ -1,0 +1,15 @@
+Multilayered Field parameter and the directories of the multilayered conmputation fields
+dim,256,256,256
+max_drift,0.0
+min_drift,0.0
+max_eigenvalue,458.39178
+min_eigenvalue,-2.2234204e-24
+driftx_path,/home/phk57mf/submission/pythrahyper_net/Struct_Field_Images/driftfieldx.tif
+drifty_path,/home/phk57mf/submission/pythrahyper_net/Struct_Field_Images/driftfieldy.tif
+driftz_path,/home/phk57mf/submission/pythrahyper_net/Struct_Field_Images/driftfieldz.tif
+tenxx_path,/home/phk57mf/submission/pythrahyper_net/Struct_Field_Images/strucxx.tif
+tenxy_path,/home/phk57mf/submission/pythrahyper_net/Struct_Field_Images/strucxy.tif
+tenxz_path,/home/phk57mf/submission/pythrahyper_net/Struct_Field_Images/strucxz.tif
+tenyy_path,/home/phk57mf/submission/pythrahyper_net/Struct_Field_Images/strucyy.tif
+tenyz_path,/home/phk57mf/submission/pythrahyper_net/Struct_Field_Images/strucyz.tif
+tenzz_path,/home/phk57mf/submission/pythrahyper_net/Struct_Field_Images/struczz.tif
