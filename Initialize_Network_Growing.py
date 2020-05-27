@@ -764,38 +764,43 @@ def save_full_simulation(home, network_name, cod, nod, edd, fieldp, dim):
     
 if __name__=='__main__':
 
-    network_name = 'skynet'
-    home = os.getcwd()
-	
-    file_paths = check_files_present(home)
-    path_multilayer, path_startpar, path_growth, path_internal = file_paths
-    
-    """Loading and interpolation over the substrate structure, creating of 
-    operator, reference functions in the global namespace"""
-    field_ref = StructField_Maker.interpol_external_fields(path_multilayer)
-    #divxp, divyp, divzp, stpxx, stpxy, stpxz, stpyy, stpyz, stpzz= field_ref
+    home = os.getcwd() 
 
-    """Loading and construction of the class object dictionaries,
-    global growth and envirmornt parameter"""
-    obj_par_env = init_objects_parameter_enviroment(path_startpar,
-                                                      path_internal,
-                                                      path_growth,
-                                                      path_multilayer)
+    # Locations of csv configuration files
+    path_struct_img = home + '/Parameter_Files/structured_image_dir.csv'
+    path_multilayer = home + '/Parameter_Files/multilayer_dir_parameters.csv'
+    path_startpar = home + '/Parameter_Files/starting_positions.csv'
+    path_growth = home + '/Parameter_Files/growth_parameters.csv'
+    path_internal = home + '/Parameter_Files/internal_parameters.csv'
+
+    # Generate feature maps from image data of growth environment
+    features = StructField_Maker.structured_field(path_struct_img, home, sigma_divd=2,
+                                                  sigma_divt1=2, sigma_divt2=2)
+
+    # Initialise the computation grid
+    field_ref = StructField_Maker.interpol_external_fields(path_multilayer)
+
+    # Initialize the object dictionaries
+    obj_par_env = init_objects_parameter_enviroment(path_startpar,path_internal,path_growth,path_multilayer)
+    
+ 
+    # Extract individual dictionaries
     cod, nod, edd, flavour, \
     ed_names, no_names, co_names, field, steps, \
     instances, dim, radius  = obj_par_env
     
-    """Constructing of the multiprocess manager and the shared memory objects
-    in the global namespace"""
+    # Create shared memory proxy objects for all paramter and Class objects
     mgr, eddp, nodp, flavourp, ed_namesp, \
     no_namesp, co_namesp, fieldp, forcep= init_manager_init(edd, nod, flavour,
                                                     ed_names, no_names,
                                                     co_names, field,
                                                     field_ref)
     
-    """Starting the growth process """
-    
-    
+    #Starting the growth process simulation
+
+    instances = 5
+    steps = 10
+
     growing_results = init_par_growing(cod, nod, edd, steps, 
                                       instances, dim, radius,
                                       eddp, nodp, flavourp, fieldp,
@@ -808,12 +813,7 @@ if __name__=='__main__':
     
     cod, nod, edd, flavour, ed_names, no_names, co_names, \
     vor, G_vor, subG_vor, G, subG = growing_results
-    
-    #save_full_simulation(home, network_name, cod, nod, edd, fieldp, dim)
-    #Movie_Maker.movie_maker(home, network_name, dim, cod, steps*instances)
-    #Movie_Maker.spline_movie_maker(home, network_name, dim, cod, steps*instances)
-   
-    
+        
 
 
 
