@@ -8,10 +8,11 @@ Created on Thu Jun 21 14:05:55 2018
 
 """
 In Navigation in 3D is a highly problematic and non trivial task. Due to the 
-anisotropic definition von spherical coordinate systems rotations and movement
-along isolines or fixed points is tricky. A way to do this a bit easier is to
-an old and archaric concept from paricle physics quaternions. To be true their
-mathematical formulation excites those of vectors in therms of age.
+anisotropic definition of spherical coordinate systems rotations and movement
+along isolines or fixed points is tricky. A way to do this a bit easier is to use
+an old and archaric concept from paricle physics called quaternions. To be true their
+mathematical formulation excites those of vectors in therms of age. Their arre the old standard
+in computer vision.
 """
 
 
