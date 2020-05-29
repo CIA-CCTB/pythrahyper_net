@@ -10,7 +10,7 @@ Created on Thu Jun 21 14:05:55 2018
 Navigation in 3D is a non-trivial task. Due to the anisotropic definition of spherical coordinate
 systems, rotations and movement along isolines or fixed points are tricky. A way to do this a bit
 easier is to use an old concept from particle physics called quaternions. To be true, their
-mathematical formulation exceeds those of vectors in terms of age. Their are common standard
+mathematical formulation exceeds those of vectors in terms of age. They are common standard
 in computer vision.
 """
 
@@ -19,25 +19,18 @@ import numpy as np
 
 
 """
-Transformation of 3d vectors to 4 dimensional quaternions
-Input : np.array([x,y,z])
-Outout : np,array([0,x,y,z])
-"""
-"""
 Function name : vec_to_quat()
 ***Description***
 
---plain text ---
+Transformation of 3d vectors to 4 dimensional quaternions
 
 ***I/O***
 Input parameter: 
-	a)...
-	b)...
+	a) np.array([x,y,z])
 Output:
-	a)
-	b)
+	a) np.array([0,x,y,z])
 
-Inline output:
+Inline output: Raises an Error raise Exception('Error the vector is not a 3D vector [x,y,z]') if vector is not of shape (3,) 
 Plot output:
 Save file:
 """
@@ -49,27 +42,20 @@ def vec_to_quat(vec):
     else:
         raise Exception('Error the vector is not a 3D vector [x,y,z]')
 
-    	
-"""
-Calculate the conjugate quaternion of given quaternion
-Input : np.array([w,x,y,z])
-Outout : np,array([w,-x,-y,-z])
-"""
+
 """
 Function name : quat_conjug()
 ***Description***
 
---plain text ---
+Calculate the conjugate quaternion of given quaternion
 
 ***I/O***
 Input parameter: 
-	a)...
-	b)...
+	a) np.array([w,x,y,z])
 Output:
-	a)
-	b)
+	a) np.array([w,-x,-y,-z])
 
-Inline output:
+Inline output: Raises an Error raise Exception('Error the quaternion is not a 4D [w,x,y,z]') if quaternion is not of shape (4,)
 Plot output:
 Save file:
 """
@@ -83,25 +69,19 @@ def quat_conjug(quat):
 
 
 """
-Normalisation of given vector with a certain tolerance
-Input : np.array([x,y,z])
-Outout : np,array([x,y,z]) with x² + y² + z² = 1
-"""
-"""
 Function name : vec_normal()
 ***Description***
 
---plain text ---
+Normalisation of given vector within a certain tolerance
 
 ***I/O***
 Input parameter: 
-	a)...
-	b)...
-Output:
-	a)
-	b)
+	a) np.array([x,y,z])
 
-Inline output:
+Output:
+	a) np.array([x,y,z]) with x² + y² + z² = 1
+
+Inline output: Raises an Error Exception('Error the vector is not a 3D vector [x,y,z]') if vector is not of shape (3,)
 Plot output:
 Save file:
 """
@@ -117,28 +97,21 @@ def vec_normal(vec, tolerance=0.00001):
 
 
 """
+Function name : quat_mult()
+***Description***
+
 This function defins how to quaternions multiplicate. The multiplication core
 can be interpreted as a kind of rotation. For deeper information read the
 coresponding wikipedia page or one of the plenty graphical visualition books
 about computer vision like I' ve done :)
-Input : np.array([w1,x1,y1,z1]), np,array([w2,x2,y2,z2])
-Outout : np,array([w_mult,x_mult,y_mult,z_mult])
-"""
-"""
-Function name : quat_mult()
-***Description***
-
---plain text ---
 
 ***I/O***
 Input parameter: 
-	a)...
-	b)...
+	a) np.array([w1,x1,y1,z1]), np,array([w2,x2,y2,z2])
 Output:
-	a)
-	b)
+	a) np.array([w_mult,x_mult,y_mult,z_mult])
 
-Inline output:
+Inline output: Raises an error Exception('Error one quaternion is not a 4D [w,x,y,z]') if quaternion is not of shape (4,)
 Plot output:
 Save file:
 """
@@ -157,27 +130,21 @@ def quat_mult(quat1, quat2):
         
 
 """
-Quaternionic multiplication between quaternion and vector. The vector
-is transformed. A second quaternionc multiplication with the conjugate of given
-quaternion returns the three vector compoments [1:] of the operation.
-Input : np.array([x1,y1,z1]), np,array([w2,x2,y2,z2])
-Outout : np,array([w_mult,x_mult,y_mult,z_mult])
-"""
-"""
 Function name : qaut_vec_mult()
 ***Description***
 
---plain text ---
+Quaternionic multiplication between quaternion and vector. The vector
+is transformed. A second quaternionc multiplication with the conjugate of given
+quaternion returns the three vector compoments [1:] of the operation.
 
 ***I/O***
 Input parameter: 
-	a)...
-	b)...
+	a) np.array([x1,y1,z1]), np,array([w2,x2,y2,z2])
 Output:
-	a)
-	b)
+	a) np.array([w_mult,x_mult,y_mult,z_mult])
 
-Inline output:
+
+Inline output: Raises an error Exception('Error the quaternion is not a 4D [w,x,y,z] or the vector is not 3D [x,y,z]') if quaternion or vector are not of shape (4,) or (3,)
 Plot output:
 Save file:
 """
@@ -190,27 +157,21 @@ def qaut_vec_mult(vec1, quat1):
         
 
 """
-Calcuation to transform a unit vector or any vector that will be normalsied 
-into a quaternion that elements are object to a rotation around half theta.
-!Theta needs to be of type degree!
-Input : np.array([x,y,z]), np.array([theta])
-Outout : np,array([w_a,x_a,y_a,z_a])
-"""
-"""
 Function name : axisangle_to_quat()
 ***Description***
 
---plain text ---
+Calcuation to transform a unit vector or any vector that will be normalsied 
+into a quaternion that elements are object to a rotation around half theta.
+!Theta needs to be of type degree!
 
 ***I/O***
 Input parameter: 
-	a)...
-	b)...
-Output:
-	a)
-	b)
+	a) np.array([x,y,z]), np.array([theta])
 
-Inline output:
+Output:
+	a) np.array([w_a,x_a,y_a,z_a])
+
+Inline output: Raises an error Exception('Error the vector is not 3D [x,y,z] or the angle 1D [theta]') if vector or angle are not of shape(3,) or (1,)
 Plot output:
 Save file:
 """
@@ -230,27 +191,22 @@ def axisangle_to_quat(vec, theta):
         raise Exception('Error the vector is not 3D [x,y,z] or the angle 1D [theta]')
         
         
-"""
-The opposite function of axisangle_to_quat, it returns the axisangle the 
-corresponding unit vector of a given quaternion.
-Input : np.array([w,x,y,z])
-Outout : np,array([x_a,y_a,z_a]), np.arra([theta])
-"""
+
 """
 Function name : quat_to_axisangle()
 ***Description***
 
---plain text ---
+The opposite function of axisangle_to_quat, it returns the axisangle the 
+corresponding unit vector of a given quaternion.
 
 ***I/O***
 Input parameter: 
-	a)...
-	b)...
-Output:
-	a)
-	b)
+	a) np.array([w,x,y,z])
 
-Inline output:
+Output:
+	a) np.array([x_a,y_a,z_a]), np.arra([theta])
+
+Inline output: Raises an error Exception('Error the quaternion is not a 4D [w,x,y,z]') if quaternion is not of shape (4,)
 Plot output:
 Save file:
 """
@@ -265,30 +221,24 @@ def quat_to_axisangle(quat):
 
 
 """
+Function name :vec_angle_rot()
+***Description***
+
 Main function for the quaternionic rotation of 3D vectors:
 A vector (vec) is rotated around a second vector a_unit with angle theta. 
 a_unit is a axisvector but mostly a basis vector of given cartesic coordinate
 system. In case of a cartesic basis vector we have the rotation around 
 coordinate axsis.
-Input : np.array([x,y,z]), np.array([theta]), 
-        np.array(x2,y2,z2) with x2² + y2² + z2² = 1
-Output : np.array([x1_rot,y1_rot,z1_rot])
-"""
-"""
-Function name :vec_angle_rot()
-***Description***
-
---plain text ---
 
 ***I/O***
 Input parameter: 
-	a)...
-	b)...
-Output:
-	a)
-	b)
+	a) np.array([x,y,z]), np.array([theta]), 
+        np.array(x2,y2,z2) with x2² + y2² + z2² = 1
 
-Inline output:
+Output:
+	a) np.array([x1_rot,y1_rot,z1_rot])
+
+Inline output: Raises an error Exception('Error one vector is not 3D [x,y,z] or the angle 1D [theta]') if vector or angle are not of shape (3,) or (1,)
 Plot output:
 Save file:
 """
