@@ -253,23 +253,4 @@ def vec_angle_rot(vec,theta,a_unit):
 
 
 if __name__=='__main__':
-
-    vector = np.array([[0,0,1],
-                       [1,0,1],
-                       [-1,0,1],
-                       [0,1,1],
-                       [0,-1,1]])
-    print(np.linalg.norm(vector,axis = 1))
-    vector = (vector.T/np.linalg.norm(vector,axis = 1)).T
-    xu = np.array([0,1,0])
-    zu = np.array([0,0,1])
-
-    
-    pol = np.array([90])
-    az = np.array([45])
-    for i,j in zip(vector,range(vector.shape[0])):
-        i = vec_angle_rot(i,pol,xu)
-        i = vec_angle_rot(i,az,zu)
-        vector[j] = i
-        print(i)
-    #vector = np.round(vector)
+	pass
