@@ -292,16 +292,4 @@ def create_starting_pos(path_pos, start_pos, start_angle, common_node):
 
 
 if __name__=='__main__':
-    home = str(Path(os.getcwd()).parent)
-
-    
-    
-    """Creates start positions, start directions growthaperture, stepsize andoverall step number"""
-    path_image = home + '/Parameter_Files/structured_image_dir.csv'
-    path_parameter = home +  '/Parameter_Files/growth_parameters.csv'
-    path_internal = home + '/Parameter_Files/internal_parameters.csv'
-    path_pos = home + '/Parameter_Files/starting_positions.csv'
-    create_starting_csv(growth_var, path_parameter)
-    create_starting_pos(path_pos, *start_pos_orientation())
-    create_internal_csv(internal_var, path_internal)
-    create_structured_images_dir_csv(image_dir, path_image)
+	pass
