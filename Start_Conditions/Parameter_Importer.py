@@ -161,12 +161,4 @@ def import_startpos_par(path_startpar):
     return np.array(pos_list,dtype=float), np.array(angle_list, dtype=float), np.array(common_node, dtype=float)
 
 if __name__=='__main__':
-    home = str(Path(os.getcwd()).parent)
-    path_internal = home + '/Parameter_Files/internal_parameters.csv'
-    path_growth = home + '/Parameter_Files/growth_parameters.csv'
-    path_multilayer = home + '/Parameter_Files/multilayer_dir_parameters.csv'
-    path_startpar = home + '/Parameter_Files/starting_positions.csv'
-    d1 = import_internal_par(path_internal)
-    d2 = import_growth_par(path_growth)
-    d3 = import_multilayer_par(path_multilayer)
-    d40,d41,d42 = import_startpos_par(path_startpar)
+	pass
