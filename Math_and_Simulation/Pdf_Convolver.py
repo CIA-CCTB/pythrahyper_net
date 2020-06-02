@@ -15,6 +15,9 @@ import Math_and_Simulation.Quaternions as Quaternions
 
 
 """
+Function name : pdf_convolver()
+***Description***
+
 The function pdf_convolver calculates with the force_drift and force_struc 
 together with the internal parameter from cod_object the covariance and the mean
 for the distribution kernel of the sphere_vector function
@@ -35,12 +38,6 @@ The pdf is a multivariate normal distribuition with covariance SIGMA and mean µ
        SIGMA = diag(1,1,1)*0.2 : internal parameter, Correlation of growth diection with last directions
        
 The function returns a normalised unit_vector new_posvec, np.array([x,y,z])
-"""
-"""
-Function name : pdf_convolver()
-***Description***
-
---plain text ---
 
 ***I/O***
 Input parameter: 
@@ -125,6 +122,9 @@ def pdf_convolver(cod_obj, force_drift, force_struc):
 
 
 """
+Function name : struc_ten_eig()
+***Description***
+
 This function takes the covarinace matirx that is the sum of all three parts
 drift, diffusion and correlation and performs a diagonalisation. This results
 in three eigenvalues sorted by magnitude.
@@ -136,12 +136,6 @@ matrix [[0,-1],[1,0]] but in 3D one has to take the quotient of the middle
 eigenvalue towards the other into account.
 
 The returned object is a tuple the same way as function np.linalg.eigh
-"""
-"""
-Function name : struc_ten_eig()
-***Description***
-
---plain text ---
 
 ***I/O***
 Input parameter: 
@@ -179,17 +173,14 @@ def struc_ten_eig(struc_ten, max_eig, min_eig, proxy_reverse_eig):
 
 
 """
+Function name : revers_eig()
+***Description***
+
 This function reconstructs a covarinace matirx out of the the object returned
 by struc_ten_eig.
 The function returns a symmetric matrix, np.array([[xx,xy,xz],
                                                    [xy,yy,yz],
                                                    [xz,yz,zz]])
-"""
-"""
-Function name : revers_eig()
-***Description***
-
---plain text ---
 
 ***I/O***
 Input parameter: 
@@ -213,18 +204,15 @@ def revers_eig(struc_ten):
 
 
 """
+Function name : convert_vector_angle()
+***Description***
+
 This function takes an unit vector (vector3d), np.array([x,y,z]) and 
 calcucates the polar and azimutal angles in respect to 
 the Cartesic coordinate system.
 Both the vector as well as the angle pair are retuned as np.array([[]]).
 This is the format to easly concatenate them to angle_list and vector_list of
 any class object in Cone ord NodeEdge.
-"""
-"""
-Function name : convert_vector_angle()
-***Description***
-
---plain text ---
 
 ***I/O***
 Input parameter: 
@@ -252,6 +240,9 @@ def convert_vector_angle(vector3d):
 
 
 """
+Function name : pdf_convolver_branching()
+***Description***
+
 This function is called if a cone decides to branch out. Depending on its 
 surroundings (force_struc) and internal branching parameter like the
 branching_angle and branching_aperture a branching direction (branching_vector 
@@ -263,12 +254,6 @@ The paramters are:
     force_struc : a vector np.array([xx,xy,xz,yy,yz,zz]) with the 6 componetes
                   for the diffusion covarinace
 The function returns branch_angle and branch_vector as np.array([[]])
-"""
-"""
-Function name : pdf_convolver_branching()
-***Description***
-
---plain text ---
 
 ***I/O***
 Input parameter: 
@@ -313,6 +298,9 @@ def pdf_convolver_branching(cod_obj, force_drift, force_struc):
 
 
 """
+Function name : pdf_convolver_bifurcation()
+***Description***
+
 This function is called if a cone decides to bifurcate. Depending on its 
 surroundings (force_struc) and internal bifuration parameter like the
 bifucation_angle and bifurcation_aperture two splitting directions 
@@ -324,12 +312,6 @@ The paramters are:
     force_struc : a vector np.array([xx,xy,xz,yy,yz,zz]) with the 6 componetes
                   for the diffusion covarinace
 The function returns two a,b branch_angle and branch_vector as np.array([[]])
-"""
-"""
-Function name : pdf_convolver_bifurcation()
-***Description***
-
---plain text ---
 
 ***I/O***
 Input parameter: 
