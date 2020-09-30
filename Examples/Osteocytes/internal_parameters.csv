@@ -1,0 +1,11 @@
+The internal parameter for the network growth
+aperture,30
+stepsize,1
+branching_angle,30,0
+bifurcation_angle,30,0
+searchfield,0.0,0.0,0.0,0.0,0.0,10.0,0.0,0.0,0.0,0.0,0.0,10.0,0.0,10.0,10.0,0.0,0.0,10.0,0.0,0.0,0.0,0.0,0.0,10.0,0.0,0.0,0.0
+branchingprob,0.02
+bifurcationprob,0.01
+deathprob,0.01
+reactivationprob,0.0
+memory,5

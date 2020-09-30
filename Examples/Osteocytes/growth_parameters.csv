@@ -1,0 +1,14 @@
+The growth parameter for the network growth
+steps,10
+instances,25
+flavour,100000
+edge_number,100000
+cone_number,100000
+node_number,100000
+covariance_revert,40
+montecarlo_iterations,100000
+delauny_cluster_radius,10
+Proxy_drift,False
+Proxy_tensor,False
+Proxy_corr,False
+Proxy_reverse_eig,True

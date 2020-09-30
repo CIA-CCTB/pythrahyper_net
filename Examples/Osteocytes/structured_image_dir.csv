@@ -1,0 +1,7 @@
+The directories of the images to construct the multilayered conmputation field
+image,Examples/Osteocytes/empty.tif
+imaged,Examples/Osteocytes/empty.tif
+imaget,Examples/Osteocytes/fiberz.tif
+image_name,volume.tif
+dirft_image_name,volume.tif
+strucure_image_name,ramp.tif
