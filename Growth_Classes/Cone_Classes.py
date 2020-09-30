@@ -140,7 +140,7 @@ class ConeClass:
     Plot output:
     Save file:
     """  
-    def spline_fitq(self):
+    def spline_fitq(self,s=0):
 
         """" spline fit for the quaternions """
         self.xq = self.pos_list[list(range(self.pos_list.shape[0])), [0] * self.pos_list.shape[0]]
@@ -149,7 +149,7 @@ class ConeClass:
         
         self.zq = self.pos_list[list(range(self.pos_list.shape[0])), [2] * self.pos_list.shape[0]]
         
-        tck, u = splprep([self.xq, self.yq, self.zq], s=0)
+        tck, u = splprep([self.xq, self.yq, self.zq], s=s)
         self.new_pointsq = splev(u, tck)
 
 
