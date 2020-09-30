@@ -5,6 +5,6 @@ Please have a look at the notebook "Introduction.ipynb", or try it directly here
 
 The following notebooks reproduce the simulations shown in Figure 6 in the paper:
 
-"Multicellular-Network" - simulation of network growth between layers of cells
-"Multi-Simulation-Setup" - generate configuration and batch files for parameter scan
-"Multi-Simulation-Analysis" - analyze results and generate plots for parameter scan
+- "Multicellular-Network" - simulation of network growth between layers of cells
+- "Multi-Simulation-Setup" - generate configuration and batch files for parameter scan
+- "Multi-Simulation-Analysis" - analyze results and generate plots for parameter scan
