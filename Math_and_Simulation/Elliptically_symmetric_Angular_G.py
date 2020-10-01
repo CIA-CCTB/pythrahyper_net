@@ -318,6 +318,58 @@ def plot_sphere_vector(vector_l, a, fAG):
 
 
 """
+Function name : plot_sphere_grid()
+***Description***
+
+This function plot as a spherical distribution (fAG) at the grid nodes in grid
+node position arrray (vector_l). a is the the position of the node that was
+drawn over he distribution via a Monte Carlo Simultation.
+The plot draws a the 3D plot with: 
+    Grid point colour indicating their probability.
+    The Cartesic coordinate axes (x,y,z) in green, blue and red
+    The Monte Carlo Simulated unit vector at a in magenta
+The function creates a 3D plot
+
+***I/O***
+Input parameter: 
+	a)...
+	b)...
+Output:
+	a)
+	b)
+
+Inline output:
+Plot output:
+Save file:
+"""
+def plot_sphere_grid(vector_l, angle):
+        
+        phi = np.deg2rad(angle[0])
+        theta = np.deg2rad(angle[1])
+        x1,y1,z1 = np.array([cos(theta) * sin(phi), sin(theta) * sin(phi), cos(phi)])
+        fig = plt.figure()
+        [x, y, z] = vector_l.T
+        ax1 = fig.add_subplot(111, projection='3d')
+        ax1.quiver(1, 0, 0,.5,0,0, color = 'g')
+        ax1.quiver(0, 1, 0,0,.5,0, color = 'b')
+        ax1.quiver(0, 0, 1,0,0,.5, color = 'r')
+        ax1.scatter(x,y,z)
+        ax1.set_xlim(-1,1)
+        ax1.set_ylim(-1,1)
+        ax1.set_zlim(-1,1)
+        ax1.quiver(x1*0.5,y1*0.5,z1*0.5,x1,y1,z1, color = 'm')
+        ax1.set_xlabel('$X$', fontsize=10)
+        ax1.set_ylabel('$Y$', fontsize=10)
+        ax1.set_zlabel('$Z$', fontsize=10)
+        ax1.set_xticks([-1,0,1])
+        ax1.set_yticks([-1,0,1])
+        ax1.set_zticks([-1,0,1])
+        ax1.view_init(elev=-3,azim=-75+180)
+        plt.show()
+
+	
+	
+"""
 Function name : rotation_mat()
 ***Description***
 
