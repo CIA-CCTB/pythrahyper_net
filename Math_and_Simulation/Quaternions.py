@@ -130,7 +130,7 @@ def quat_mult(quat1, quat2):
         
 
 """
-Function name : qaut_vec_mult()
+Function name : quat_vec_mult()
 ***Description***
 
 Quaternionic multiplication between quaternion and vector. The vector
@@ -148,7 +148,7 @@ Inline output: Raises an error Exception('Error the quaternion is not a 4D [w,x,
 Plot output:
 Save file:
 """
-def qaut_vec_mult(vec1, quat1):
+def quat_vec_mult(vec1, quat1):
     if vec1.shape[0] == 3 and quat1.shape[0] ==4:
     	quat2 = vec_to_quat(vec1)
     	return quat_mult(quat_mult(quat1, quat2), quat_conjug(quat1))[1:]
@@ -213,7 +213,7 @@ Save file:
 def quat_to_axisangle(quat):
    if quat.shape[0] == 4: 
     	w, vec = quat[0], quat[1:]
-    	theta = np.arccos(w) * 2.0
+    	theta = np.rad2deg(np.arccos(w) * 2.0)
     	return vec_normal(vec), theta
     
    else:
