@@ -35,7 +35,9 @@ Next, install and activate the required extension:
 
 `jupyter nbextension enable --py mayavi --user`
 
-If you get missing symbol errors upon importing `mlab`, try this: `conda install -c conda-force "libnetcdf=4.6.2"`
+If you get missing symbol errors upon importing `mlab`, try this:
+
+`conda install -c conda-force "libnetcdf=4.6.2"`
 
 ### Interactive Matplotlib plots:
 
