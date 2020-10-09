@@ -26,14 +26,16 @@ Then change into the new environment using `conda activate pythra`, and start a 
 To get interactive mayavi visualizations inside the browser, first install mayavi and ipyevents:
 
 `conda install -c anaconda mayavi`
+
 `conda install -c conda-forge ipyevents`
 
 Next, install and activate the required extension:
 
 `jupyter nbextension install --py mayavi --user`
+
 `jupyter nbextension enable --py mayavi --user`
 
-If you get errors upon importing `mlab`, this additional command may be necessary: `conda install -c conda-force "libnetcdf=4.6.2"`
+If you get missing symbol errors upon importing `mlab`, try this: `conda install -c conda-force "libnetcdf=4.6.2"`
 
 ### Interactive Matplotlib plots:
 
