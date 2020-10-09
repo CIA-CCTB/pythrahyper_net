@@ -17,15 +17,25 @@ The framework is written in python using numpy and the multiprocessing module, a
 
 The easiest way to install the required python packages is by using conda. Creating a new environment with this command will install all dependencies:
 
-`conda create --name pythra python=3.7 pyqt=5 mayavi numpy scipy tifffile jupyter networkx matplotlib`
+`conda create --name pythra python=3.7 pyqt=5 numpy scipy tifffile jupyter networkx matplotlib`
 
 Then change into the new environment using `conda activate pythra`, and start a Jupyter notebook server in the `pythrahyper_net` directory to access the notebooks.
 
-To get interactive mayavi visualizations inside the browser, install and activate the required extension:
+### Mayavi visualization in the browser:
+
+To get interactive mayavi visualizations inside the browser, first install mayavi and ipyevents:
+
+`conda install -c anaconda mayavi`
+`conda install -c conda-forge ipyevents`
+
+Next, install and activate the required extension:
 
 `jupyter nbextension install --py mayavi --user`
-
 `jupyter nbextension enable --py mayavi --user`
+
+If you get errors upon importing `mlab`, this additional command may be necessary: `conda install -c conda-force "libnetcdf=4.6.2"`
+
+### Interactive Matplotlib plots:
 
 The matplotlib plots can be made interactive using these modules:
 
