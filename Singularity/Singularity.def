@@ -11,11 +11,8 @@ From: continuumio/miniconda3
     
     /opt/conda/bin/conda install python=3.7 pyqt=5
     /opt/conda/bin/conda install -c anaconda mayavi
-    /opt/conda/bin/conda install numpy scipy
-    /opt/conda/bin/conda install tifffile
-    /opt/conda/bin/conda install networkx
-    /opt/conda/bin/conda install -c conda-forge ipympl
-    /opt/conda/bin/conda install -c conda-forge widgetsnbextension
-    jupyter nbextension install --py mayavi --user
-    jupyter nbextension enable --py mayavi --user
-    /opt/conda/bin/conda install -c conda-forge "libnetcdf=4.6.2”
+    /opt/conda/bin/conda install numpy scipy tifffile jupyter networkx
+    /opt/conda/bin/conda install -c conda-forge ipympl widgetsnbextension
+    /opt/conda/bin/jupyter nbextension install --py mayavi --user
+    /opt/conda/bin/jupyter nbextension enable --py mayavi --user
+    /opt/conda/bin/conda install -c conda-forge "libnetcdf=4.6.2"
