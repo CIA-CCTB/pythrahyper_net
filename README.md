@@ -17,7 +17,7 @@ The framework is written in python using numpy and the multiprocessing module, a
 
 The easiest way to install the required python packages is by using conda. Creating a new environment with this command will install all dependencies:
 
-`conda create --name pythra python=3.7 pyqt=5 numpy scipy tifffile jupyter networkx matplotlib`
+`conda create --name pythra python=3.7 pyqt=5 scipy tifffile jupyter networkx matplotlib`
 
 Then change into the new environment using `conda activate pythra`, and start a Jupyter notebook server in the `pythrahyper_net` directory to access the notebooks.
 
